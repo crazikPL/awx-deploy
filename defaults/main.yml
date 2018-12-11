@@ -4,13 +4,7 @@ dockerhub_version: "{{ lookup('file', playbook_dir + '/../VERSION') }}"
 rabbitmq_version: "3.7.4"
 rabbitmq_image: "ansible/awx_rabbitmq:{{rabbitmq_version}}"
 rabbitmq_default_vhost: "awx"
-rabbitmq_erlang_cookie: "D!vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          62303262353632306331363530623363643865333465383864373136373565366534396132333131
-          3430656565363637353035303761616531326537313539350a656536643566303231636661336436
-          65316437333164366435353434643533313361616333376666653865633839333734613436326337
-          6163373831396362350a353938303738653463393464666665353766363437393864613263626265
-          3336"
+rabbitmq_erlang_cookie: "cookiemonster"
 rabbitmq_port: "5672"
 rabbitmq_default_username: "guest"
 rabbitmq_default_password: "guest"
