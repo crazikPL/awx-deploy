@@ -81,7 +81,7 @@
     name: awx_web
     state: started
     restart_policy: unless-stopped
-    image: "{{ awx_web_docker_actual_image }}"
+    image: "ansible/awx_web"
     volumes: >
       {{
         ([project_data_dir + ':/var/lib/awx/projects:z'] if project_data_dir is defined else [])
@@ -124,7 +124,7 @@
     name: awx_task
     state: started
     restart_policy: unless-stopped
-    image: "{{ awx_task_docker_actual_image }}"
+    image: "ansible/awx_task"
     volumes: >
       {{
         ([project_data_dir + ':/var/lib/awx/projects:z'] if project_data_dir is defined else [])
@@ -132,7 +132,7 @@
       }}
     links: "{{ awx_task_container_links|list }}"
     user: root
-    hostname: "{{ awx_task_hostname }}"
+    hostname: "awx_task"
     dns_search_domains: "{{ awx_container_search_domains.split(',') if awx_container_search_domains is defined else omit }}"
     dns_servers: "{{ awx_alternate_dns_servers.split(',') if awx_alternate_dns_servers is defined else omit }}"
     env:
