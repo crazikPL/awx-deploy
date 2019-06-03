@@ -14,8 +14,8 @@ postgresql_image: "postgres:{{postgresql_version}}"
 pg_password: "awxpass"
 pg_username: "awx"
 pg_database: "awx"
-pg_port: 5432
-host_port: 80
+pg_port: "5432"
+host_port: "80"
 postgres_data_dir: "/tmp/pgdocker"
 admin_user: "admin"
 admin_password: "password"
